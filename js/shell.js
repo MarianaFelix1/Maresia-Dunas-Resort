@@ -1,6 +1,3 @@
-// ============================================
-// MARESIA DUNAS RESORT — SHELL (sidebar/topbar)
-// ============================================
 
 const MENU_ITEMS = [
     { page: 'dashboard.html',      icon: 'ti-home',     label: 'Dashboard',     roles: ['admin','recepcao'] },
@@ -8,18 +5,14 @@ const MENU_ITEMS = [
     { page: 'quartos.html',        icon: 'ti-bed',      label: 'Quartos',       roles: ['admin','recepcao'] },
     { page: 'reservas.html',       icon: 'ti-calendar', label: 'Reservas',      roles: ['admin','recepcao'] },
     { page: 'financeiro.html',     icon: 'ti-cash',     label: 'Financeiro',    roles: ['admin'] },
-    { page: 'configuracoes.html',  icon: 'ti-settings', label: 'Configurações', roles: ['admin', 'recepcao'] }, // <-- LIBERADO PARA AMBOS VEREM NA LATERAL
+    { page: 'configuracoes.html',  icon: 'ti-settings', label: 'Configurações', roles: ['admin', 'recepcao'] },
 ];
 
-// Páginas restritas — usuários sem permissão são redirecionados
 const PAGINAS_RESTRITAS = {
     'financeiro.html': ['admin'],
-    'configuracoes.html': ['admin', 'recepcao'], // <-- LIBERADO O ACESSO DE ENTRADA PARA A RECEPÇÃO
+    'configuracoes.html': ['admin', 'recepcao'], // 
 };
 
-// ============================================
-// CAPACIDADE PADRÃO DOS QUARTOS (configurável em Configurações)
-// ============================================
 
 const CAPACIDADES_PADRAO_DEFAULT = {
     'Suíte Oceano': 2,
