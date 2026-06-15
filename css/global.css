@@ -1,0 +1,607 @@
+/* ============================================
+   MARESIA DUNAS RESORT — DESIGN SYSTEM
+   ============================================ */
+
+:root{
+    /* Paleta */
+    --areia:        #F6F1E7;
+    --areia-escura: #E8DCC8;
+    --oceano:       #0E2A30;
+    --oceano-med:   #1F4E54;
+    --oceano-claro: #3A6B70;
+    --dourado:      #C9A66B;
+    --dourado-claro:#E3CFA4;
+    --turquesa:     #2EC4B6;
+    --coral:        #E0746A;
+
+    /* Texto */
+    --texto-claro:  #F6F1E7;
+    --texto-muted:  rgba(246,241,231,.65);
+    --texto-escuro: #0E2A30;
+
+    /* Sombra */
+    --sombra-card: 0 10px 30px rgba(14,42,48,.08);
+    --sombra-hover: 0 16px 40px rgba(14,42,48,.14);
+
+    /* Raio */
+    --radius-lg: 22px;
+    --radius-md: 14px;
+    --radius-sm: 10px;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:var(--areia);
+    color:var(--texto-escuro);
+    min-height:100vh;
+    -webkit-font-smoothing:antialiased;
+}
+
+h1,h2,h3{
+    font-family:'Fraunces',serif;
+    letter-spacing:-.01em;
+}
+
+.container{
+    display:flex;
+    min-height:100vh;
+}
+
+/* ============================================
+   SIDEBAR
+   ============================================ */
+
+.sidebar{
+    width:280px;
+    height:100vh;
+    align-self:flex-start;
+    background:linear-gradient(190deg,var(--oceano) 0%, var(--oceano-med) 100%);
+    color:var(--texto-claro);
+    padding:30px 22px;
+    position:sticky;
+    top:0;
+    display:flex;
+    flex-direction:column;
+    overflow-y:auto;
+    z-index:10;
+}
+
+/* Onda decorativa de fundo */
+.sidebar::after{
+    content:"";
+    position:absolute;
+    left:0; right:0; bottom:0;
+    height:160px;
+    background:
+        radial-gradient(120% 60% at 20% 100%, rgba(201,166,107,.10), transparent 60%),
+        radial-gradient(120% 60% at 80% 100%, rgba(46,196,182,.08), transparent 60%);
+    pointer-events:none;
+}
+
+.sidebar > *{ position:relative; z-index:1; }
+
+/* LOGO */
+.logo{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:40px;
+    padding-bottom:24px;
+    border-bottom:1px solid rgba(246,241,231,.12);
+}
+
+.logo img{
+    width:46px !important;
+    height:46px !important;
+    min-width:46px;
+    max-width:46px;
+    max-height:46px !important;
+    object-fit:contain !important;
+    display:block !important;
+    border-radius:50%;
+    background:var(--dourado-claro);
+    padding:6px;
+}
+
+.logo-text h2{
+    font-size:21px;
+    line-height:1.1;
+    color:var(--texto-claro);
+    font-weight:600;
+}
+
+.logo-text span{
+    font-size:10px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:var(--dourado-claro);
+    font-family:'Inter',sans-serif;
+    font-weight:500;
+}
+
+/* PERFIL BADGE */
+.perfil-badge{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:14px;
+    margin-bottom:18px;
+    background:rgba(246,241,231,.06);
+    border:1px solid rgba(246,241,231,.10);
+    border-radius:var(--radius-md);
+}
+
+.perfil-badge i{
+    width:38px;
+    height:38px;
+    border-radius:10px;
+    background:rgba(201,166,107,.16);
+    color:var(--dourado);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:18px;
+    flex-shrink:0;
+}
+
+.perfil-info{
+    display:flex;
+    flex-direction:column;
+    min-width:0;
+}
+
+.perfil-info strong{
+    font-size:13px;
+    color:var(--texto-claro);
+    font-weight:600;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+.perfil-info span{
+    font-size:11px;
+    color:var(--dourado-claro);
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+
+/* MENU */
+.sidebar ul{
+    list-style:none;
+    flex:1;
+}
+
+.sidebar li{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:14px 16px;
+    margin:4px 0;
+    border-radius:var(--radius-md);
+    cursor:pointer;
+    transition:.25s ease;
+    font-size:15px;
+    font-weight:500;
+    color:var(--texto-muted);
+    border-left:3px solid transparent;
+}
+
+.sidebar li i{
+    font-size:20px;
+    width:22px;
+    text-align:center;
+}
+
+.sidebar li:hover{
+    background:rgba(246,241,231,.06);
+    color:var(--texto-claro);
+    transform:translateX(3px);
+}
+
+.sidebar li.active{
+    background:rgba(201,166,107,.14);
+    border-left:3px solid var(--dourado);
+    color:var(--texto-claro);
+}
+
+.sidebar li.active i{
+    color:var(--dourado);
+}
+
+/* Logout dentro da sidebar (rodapé) */
+.sidebar .logout-area{
+    padding-top:18px;
+    border-top:1px solid rgba(246,241,231,.12);
+}
+
+.sidebar .logout-area li{
+    color:var(--texto-muted);
+}
+
+.sidebar .logout-area li:hover{
+    color:var(--coral);
+    background:rgba(224,116,106,.10);
+}
+
+/* ============================================
+   CONTEÚDO PRINCIPAL
+   ============================================ */
+
+main{
+    flex:1;
+    padding:38px 42px;
+    max-width:100%;
+}
+
+/* TOPBAR */
+.topbar,
+main > header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    margin-bottom:34px;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.topbar h1, main > header h1{
+    font-size:30px;
+    font-weight:600;
+    color:var(--oceano);
+    margin-bottom:6px;
+}
+
+.topbar p, main > header p{
+    font-size:14px;
+    color:var(--oceano-claro);
+}
+
+#logoutBtn{
+    padding:11px 22px;
+    border:1px solid var(--oceano-med);
+    border-radius:var(--radius-sm);
+    background:transparent;
+    color:var(--oceano-med);
+    font-weight:600;
+    font-size:14px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+#logoutBtn:hover{
+    background:var(--oceano);
+    color:var(--areia);
+}
+
+/* Botões primários (Novo X) */
+header button:not(#logoutBtn),
+.topbar button:not(#logoutBtn){
+    background:var(--oceano);
+    color:var(--areia);
+    border:none;
+    padding:13px 24px;
+    border-radius:var(--radius-sm);
+    font-weight:600;
+    font-size:14px;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    transition:.25s;
+    box-shadow:var(--sombra-card);
+}
+
+header button:not(#logoutBtn):hover,
+.topbar button:not(#logoutBtn):hover{
+    background:var(--dourado);
+    color:var(--oceano);
+    transform:translateY(-2px);
+    box-shadow:var(--sombra-hover);
+}
+
+/* ============================================
+   CARDS GENÉRICOS
+   ============================================ */
+
+.card,
+.stat-card,
+.table-card,
+.search-card,
+.quarto-card,
+.reserva-card,
+.settings-card{
+    background:#FFFFFF;
+    border:1px solid rgba(14,42,48,.06);
+    border-radius:var(--radius-lg);
+    box-shadow:var(--sombra-card);
+    color:var(--texto-escuro);
+    transition:.25s ease;
+}
+
+.card:hover,
+.stat-card:hover,
+.quarto-card:hover,
+.reserva-card:hover{
+    transform:translateY(-4px);
+    box-shadow:var(--sombra-hover);
+}
+
+/* ============================================
+   MODAL (compartilhado)
+   ============================================ */
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(14,42,48,.55);
+    backdrop-filter:blur(4px);
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.modal.active{
+    display:flex;
+}
+
+.modal-content{
+    width:460px;
+    max-width:90vw;
+    background:var(--areia);
+    padding:30px;
+    border-radius:var(--radius-lg);
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    box-shadow:0 25px 60px rgba(14,42,48,.35);
+    max-height:90vh;
+    overflow-y:auto;
+}
+
+.modal-content h2{
+    color:var(--oceano);
+    font-size:22px;
+    margin-bottom:6px;
+}
+
+.modal-content input,
+.modal-content select{
+    width:100%;
+    padding:13px 14px;
+    border:1px solid #DDD3C2;
+    border-radius:var(--radius-sm);
+    outline:none;
+    font-family:'Inter',sans-serif;
+    font-size:14px;
+    background:#fff;
+    color:var(--texto-escuro);
+    transition:.2s;
+}
+
+.modal-content input:focus,
+.modal-content select:focus{
+    border-color:var(--oceano-med);
+    box-shadow:0 0 0 3px rgba(31,78,84,.12);
+}
+
+.modal-content label{
+    font-size:13px;
+    font-weight:600;
+    color:var(--oceano-claro);
+    margin-bottom:-8px;
+}
+
+.buttons{
+    display:flex;
+    gap:10px;
+    margin-top:6px;
+}
+
+.buttons button,
+.modal-content button{
+    flex:1;
+    border:none;
+    padding:13px;
+    border-radius:var(--radius-sm);
+    cursor:pointer;
+    font-weight:600;
+    font-size:14px;
+    transition:.2s;
+}
+
+#salvar{
+    background:var(--oceano);
+    color:var(--areia);
+}
+
+#salvar:hover{
+    background:var(--dourado);
+    color:var(--oceano);
+}
+
+#fechar{
+    background:var(--areia-escura);
+    color:var(--oceano);
+}
+
+#fechar:hover{
+    background:#DCCFB8;
+}
+
+/* ============================================
+   SCROLLBAR
+   ============================================ */
+
+::-webkit-scrollbar{ width:8px; }
+::-webkit-scrollbar-track{ background:transparent; }
+::-webkit-scrollbar-thumb{
+    background:var(--areia-escura);
+    border-radius:8px;
+}
+
+/* ============================================
+   RESPONSIVO
+   ============================================ */
+
+@media (max-width:1024px){
+    .sidebar{ width:88px; padding:24px 12px; }
+    .sidebar .logo-text,
+    .sidebar li span,
+    .sidebar li:not(.logo) > *:not(i){ display:none; }
+    .logo{ justify-content:center; }
+    .sidebar li{ justify-content:center; padding:14px 0; }
+    .sidebar li i{ font-size:22px; }
+    main{ padding:24px; }
+    .perfil-badge{ justify-content:center; padding:10px; }
+    .perfil-badge .perfil-info{ display:none; }
+}
+
+@media (max-width:680px){
+    .container{ flex-direction:column; }
+    .sidebar{
+        width:100%;
+        height:auto;
+        min-height:auto;
+        position:relative;
+        flex-direction:row;
+        align-items:center;
+        padding:14px 18px;
+        overflow-x:auto;
+    }
+    .sidebar::after{ display:none; }
+    .perfil-badge{ display:none; }
+    .logo{ margin:0; border:none; padding:0; margin-right:14px; }
+    .sidebar ul{ display:flex; flex:none; }
+    .sidebar li{ margin:0 4px; }
+    .sidebar .logout-area{ border:none; padding:0; margin-left:auto; }
+    main{ padding:20px; }
+    .topbar h1, main > header h1{ font-size:24px; }
+}
+
+/* ============================================
+   MODO ESCURO
+   ============================================
+   A sidebar mantém sua paleta original (já é escura).
+   As variáveis abaixo são redefinidas apenas dentro de
+   <main> e .modal, deixando a sidebar intacta.
+*/
+
+body.dark-mode{
+    background:#0B1F24;
+    color:#F6F1E7;
+}
+
+body.dark-mode main,
+body.dark-mode .modal{
+    --oceano:        #F6F1E7;
+    --oceano-med:    #6FA0A6;
+    --oceano-claro:  #9CC4C8;
+    --areia:         #16323A;
+    --areia-escura:  #1F4E54;
+    --texto-escuro:  #F6F1E7;
+}
+
+/* Cards e painéis com fundo sólido (hardcoded #FFFFFF) */
+body.dark-mode .card,
+body.dark-mode .stat-card,
+body.dark-mode .table-card,
+body.dark-mode .search-card,
+body.dark-mode .quarto-card,
+body.dark-mode .reserva-card,
+body.dark-mode .settings-card,
+body.dark-mode .panel{
+    background:#16323A;
+    border-color:rgba(246,241,231,.08);
+}
+
+body.dark-mode .card:hover,
+body.dark-mode .stat-card:hover,
+body.dark-mode .quarto-card:hover,
+body.dark-mode .reserva-card:hover{
+    box-shadow:0 16px 40px rgba(0,0,0,.45);
+}
+
+/* Campos de formulário (fundo branco fixo) */
+body.dark-mode .modal-content input,
+body.dark-mode .modal-content select,
+body.dark-mode .field input,
+body.dark-mode .field select,
+body.dark-mode .filters input,
+body.dark-mode .filters select,
+body.dark-mode .search-card input{
+    background:#1F4E54;
+    border-color:rgba(246,241,231,.15);
+    color:#F6F1E7;
+}
+
+body.dark-mode .modal-content input::placeholder,
+body.dark-mode .search-card input::placeholder,
+body.dark-mode .filters input::placeholder{
+    color:rgba(246,241,231,.4);
+}
+
+body.dark-mode .field input:disabled{
+    background:rgba(246,241,231,.06);
+    color:rgba(246,241,231,.45);
+    border-color:rgba(246,241,231,.10);
+}
+
+/* Linha de hover em tabelas */
+body.dark-mode tbody tr:hover{
+    background:rgba(246,241,231,.04);
+}
+
+/* Botão "Cancelar" — ajuste de hover */
+body.dark-mode #fechar:hover{
+    background:rgba(246,241,231,.16);
+}
+
+/* Botões com fundo dourado — texto precisa ficar escuro */
+body.dark-mode #salvar:hover,
+body.dark-mode header button:not(#logoutBtn):hover,
+body.dark-mode .topbar button:not(#logoutBtn):hover{
+    color:#0E2A30;
+}
+
+/* Avatar de hóspedes (fundo claro fixo) */
+body.dark-mode .avatar{
+    color:#0E2A30;
+}
+
+/* Badges de status — cores mais claras para contraste em fundo escuro */
+body.dark-mode .disponivel,
+body.dark-mode .status.ativa,
+body.dark-mode .tipo-tag.receita,
+body.dark-mode .valor.receita{
+    color:#5EE0D1;
+}
+
+body.dark-mode .manutencao,
+body.dark-mode .status.checkin{
+    color:#E8C988;
+}
+
+body.dark-mode .ocupado,
+body.dark-mode .status.checkout,
+body.dark-mode .tipo-tag.despesa,
+body.dark-mode .valor.despesa{
+    color:#FF9E96;
+}
+
+/* Switch (toggle) — trilho no estado desligado */
+body.dark-mode .switch .slider{
+    background:rgba(246,241,231,.18);
+}
+
+/* Scrollbar */
+body.dark-mode::-webkit-scrollbar-thumb{
+    background:rgba(246,241,231,.15);
+}

@@ -1,0 +1,301 @@
+/* ============================================
+   RESERVAS — MARESIA DUNAS RESORT
+   ============================================ */
+
+#novaReserva{
+    background:var(--oceano);
+}
+
+/* ESTATÍSTICAS */
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    margin-bottom:30px;
+}
+
+.stat-card{
+    padding:22px;
+}
+
+.stat-card h2{
+    font-size:30px;
+    margin-bottom:4px;
+    font-weight:600;
+}
+
+.stat-card span{
+    font-size:13px;
+    color:var(--oceano-claro);
+    font-weight:500;
+}
+
+.stat-card:nth-child(1) h2{ color:var(--oceano); }
+.stat-card:nth-child(2) h2{ color:var(--turquesa); }
+.stat-card:nth-child(3) h2{ color:var(--dourado); }
+.stat-card:nth-child(4) h2{ color:var(--coral); }
+
+/* GRID DE RESERVAS */
+.reservas-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+    gap:22px;
+}
+
+.reserva-card{
+    padding:22px;
+}
+
+.reserva-card .reserva-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    margin-bottom:14px;
+}
+
+.reserva-card h3{
+    font-size:18px;
+    color:var(--oceano);
+    font-weight:600;
+}
+
+.reserva-card .quarto-nome{
+    font-size:13px;
+    color:var(--oceano-claro);
+    margin-top:2px;
+}
+
+.reserva-card p{
+    margin:8px 0;
+    font-size:14px;
+    color:var(--oceano-claro);
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.reserva-card p i{
+    color:var(--oceano-med);
+    font-size:16px;
+    width:18px;
+}
+
+.status{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    margin-top:14px;
+    padding:7px 14px;
+    border-radius:30px;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.5px;
+}
+
+.status::before{
+    content:"";
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:currentColor;
+}
+
+.status.ativa{
+    background:rgba(46,196,182,.14);
+    color:#1B9E92;
+}
+
+.status.checkin{
+    background:rgba(201,166,107,.18);
+    color:#A6803F;
+}
+
+.status.checkout{
+    background:rgba(224,116,106,.12);
+    color:var(--coral);
+}
+
+.cap-info{
+    color:var(--oceano-claro);
+    font-size:12px;
+    font-weight:400;
+}
+
+.hint{
+    font-size:12px;
+    color:var(--oceano-claro);
+    margin-top:-8px;
+}
+
+.reserva-footer{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:16px;
+}
+
+.reserva-actions{
+    display:flex;
+    gap:6px;
+}
+
+.reserva-actions button{
+    border:none;
+    width:32px;
+    height:32px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:14px;
+    transition:.2s;
+    background:var(--areia-escura);
+    color:var(--oceano);
+}
+
+.reserva-actions button:hover{
+    background:var(--oceano);
+    color:var(--areia);
+}
+
+.empty-msg{
+    grid-column:1 / -1;
+    text-align:center;
+    padding:60px 20px;
+    color:var(--oceano-claro);
+    font-size:14px;
+}
+
+@media (max-width:1024px){
+    .stats{ grid-template-columns:repeat(2,1fr); }
+}
+
+@media (max-width:640px){
+    .stats{ grid-template-columns:1fr; }
+}
+/* ========================================================
+   ESTILOS ADICIONADOS: MODAL DE CONSUMO / FRIGOBAR
+   ======================================================== */
+
+/* Botão de Frigobar no rodapé do card */
+.consumo-badge-btn {
+    background: #e67e22 !important; /* Laranja característico */
+    color: white !important;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.consumo-badge-btn:hover {
+    background: #d35400 !important;
+    transform: translateY(-1px);
+}
+
+.consumo-badge-btn:active {
+    transform: translateY(0);
+}
+
+/* Ajustes internos do formulário rápido de lançamento */
+#modalConsumo input[type="text"],
+#modalConsumo input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    box-sizing: border-box;
+    background: #ffffff;
+}
+
+#modalConsumo input:focus {
+    outline: none;
+    border-color: #e67e22;
+    box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.15);
+}
+
+/* Botão de inserir item */
+#btnLancarConsumo {
+    background: var(--oceano, #2c3e50);
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#btnLancarConsumo:hover {
+    background: #1a252f;
+}
+
+/* Estilização da tabela de consumo corrente */
+#modalConsumo table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#modalConsumo th {
+    font-weight: 600;
+    color: var(--text-dark, #333);
+    background: rgba(0, 0, 0, 0.04);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.08);
+}
+
+#modalConsumo td {
+    color: #444;
+}
+
+#modalConsumo tr:nth-child(even) {
+    background: rgba(0, 0, 0, 0.01);
+}
+
+/* Barra de rolagem customizada e suave para o histórico */
+#modalConsumo div::-webkit-scrollbar {
+    width: 6px;
+}
+
+#modalConsumo div::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.03);
+    border-radius: 6px;
+}
+
+#modalConsumo div::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+}
+
+#modalConsumo div::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.25);
+}
+
+/* Suporte automático ao Modo Escuro */
+body.dark-mode #modalConsumo .modal-content {
+    background: #1e293b;
+    color: #f8fafc;
+}
+
+body.dark-mode #modalConsumo div[style*="background: rgba(0,0,0,0.03)"] {
+    background: rgba(255, 255, 255, 0.05) !important;
+}
+
+body.dark-mode #modalConsumo input {
+    background: #0f172a;
+    border-color: rgba(255, 255, 255, 0.1);
+    color: #f8fafc;
+}
+
+body.dark-mode #modalConsumo th {
+    background: rgba(255, 255, 255, 0.05);
+    color: #cbd5e1;
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode #modalConsumo td {
+    color: #e2e8f0;
+}

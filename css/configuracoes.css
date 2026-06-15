@@ -1,0 +1,290 @@
+/* ============================================
+   CONFIGURAÇÕES — MARESIA DUNAS RESORT
+   ============================================ */
+
+.settings-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:22px;
+}
+
+.settings-card{
+    padding:26px;
+}
+
+.settings-card h3{
+    font-size:18px;
+    color:var(--oceano);
+    font-weight:600;
+    margin-bottom:6px;
+}
+
+.settings-card .desc{
+    font-size:13px;
+    color:var(--oceano-claro);
+    margin-bottom:20px;
+}
+
+.field{
+    margin-bottom:16px;
+}
+
+.field label{
+    display:block;
+    font-size:13px;
+    font-weight:600;
+    color:var(--oceano-claro);
+    margin-bottom:6px;
+}
+
+.field input,
+.field select{
+    width:100%;
+    padding:12px 14px;
+    border:1px solid var(--areia-escura);
+    border-radius:var(--radius-sm);
+    font-family:'Inter',sans-serif;
+    font-size:14px;
+    color:var(--oceano);
+    outline:none;
+    background:#fff;
+    transition:.2s;
+}
+
+.field input:focus,
+.field select:focus{
+    border-color:var(--oceano-med);
+}
+
+.field input:disabled{
+    background:var(--areia-escura);
+    color:var(--oceano-claro);
+    cursor:not-allowed;
+}
+
+.field label i{
+    margin-right:6px;
+    color:var(--oceano-med);
+}
+
+.field-note{
+    display:flex;
+    align-items:flex-start;
+    gap:8px;
+    font-size:12px;
+    color:var(--oceano-claro);
+    line-height:1.5;
+    margin-top:4px;
+}
+
+.field-note i{
+    font-size:16px;
+    flex-shrink:0;
+    margin-top:1px;
+}
+
+/* BACKUP E DADOS */
+.backup-actions{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-bottom:18px;
+}
+
+.backup-actions button,
+.backup-actions .file-label{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    text-align:center;
+}
+
+.btn-danger{
+    background:rgba(224,116,106,.12);
+    color:var(--coral);
+    border:none;
+    padding:13px 24px;
+    border-radius:var(--radius-sm);
+    font-weight:600;
+    font-size:14px;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.btn-danger:hover{
+    background:var(--coral);
+    color:#fff;
+}
+
+.backup-msg{
+    font-size:13px;
+    color:var(--turquesa);
+    font-weight:600;
+    min-height:18px;
+    margin-bottom:8px;
+}
+
+.sistema-info{
+    border-top:1px solid var(--areia-escura);
+    padding-top:14px;
+}
+
+.info-row{
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    padding:6px 0;
+    color:var(--oceano-claro);
+}
+
+.info-row strong{
+    color:var(--oceano);
+}
+
+/* TOGGLES */
+.toggle-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:14px 0;
+    border-bottom:1px solid var(--areia-escura);
+}
+
+.toggle-row:last-child{
+    border-bottom:none;
+}
+
+.toggle-row .label-group strong{
+    display:block;
+    font-size:14px;
+    color:var(--oceano);
+    margin-bottom:2px;
+}
+
+.toggle-row .label-group span{
+    font-size:12px;
+    color:var(--oceano-claro);
+}
+
+.switch{
+    position:relative;
+    width:46px;
+    height:26px;
+    flex-shrink:0;
+}
+
+.switch input{
+    opacity:0;
+    width:0;
+    height:0;
+}
+
+.switch .slider{
+    position:absolute;
+    inset:0;
+    background:var(--areia-escura);
+    border-radius:30px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.switch .slider::before{
+    content:"";
+    position:absolute;
+    width:20px;
+    height:20px;
+    left:3px;
+    top:3px;
+    background:#fff;
+    border-radius:50%;
+    transition:.3s;
+    box-shadow:0 2px 4px rgba(0,0,0,.15);
+}
+
+.switch input:checked + .slider{
+    background:var(--turquesa);
+}
+
+.switch input:checked + .slider::before{
+    transform:translateX(20px);
+}
+
+/* AÇÕES */
+.settings-actions{
+    margin-top:24px;
+    display:flex;
+    gap:12px;
+}
+
+.btn-primary{
+    background:var(--oceano);
+    color:var(--areia);
+    border:none;
+    padding:13px 24px;
+    border-radius:var(--radius-sm);
+    font-weight:600;
+    font-size:14px;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.btn-primary:hover{
+    background:var(--dourado);
+    color:var(--oceano);
+}
+
+.btn-secondary{
+    background:var(--areia-escura);
+    color:var(--oceano);
+    border:none;
+    padding:13px 24px;
+    border-radius:var(--radius-sm);
+    font-weight:600;
+    font-size:14px;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.btn-secondary:hover{
+    background:#DCCFB8;
+}
+
+.save-msg{
+    margin-top:14px;
+    font-size:13px;
+    color:var(--turquesa);
+    font-weight:600;
+    min-height:18px;
+}
+
+@media (max-width:1024px){
+    .settings-grid{ grid-template-columns:1fr; }
+}
+body.dark-mode{
+    background:#121212;
+    color:#fff;
+}
+
+body.dark-mode .settings-card{
+    background:#1e1e1e;
+    color:#fff;
+}
+
+body.dark-mode .field input,
+body.dark-mode .field select{
+    background:#2b2b2b;
+    color:#fff;
+    border-color:#444;
+}
+
+body.dark-mode .btn-secondary{
+    background:#333;
+    color:#fff;
+}
+
+body.dark-mode .info-row strong,
+body.dark-mode .toggle-row .label-group strong,
+body.dark-mode .settings-card h3{
+    color:#fff;
+}

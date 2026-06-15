@@ -1,0 +1,131 @@
+/* ============================================
+   HÓSPEDES — MARESIA DUNAS RESORT
+   ============================================ */
+
+#novoHospede{
+    background:var(--oceano);
+}
+
+/* BARRA DE BUSCA */
+.search-card{
+    padding:16px 20px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:22px;
+    color:var(--oceano-claro);
+}
+
+.search-card i{
+    font-size:18px;
+}
+
+.search-card input{
+    width:100%;
+    border:none;
+    background:none;
+    color:var(--texto-escuro);
+    outline:none;
+    font-size:15px;
+    font-family:'Inter',sans-serif;
+}
+
+.search-card input::placeholder{
+    color:var(--oceano-claro);
+}
+
+/* TABELA */
+.table-card{
+    padding:8px;
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+thead th{
+    text-align:left;
+    padding:16px 20px;
+    font-size:12px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:var(--oceano-claro);
+    font-weight:700;
+    border-bottom:1px solid var(--areia-escura);
+}
+
+tbody td{
+    padding:16px 20px;
+    border-bottom:1px solid var(--areia-escura);
+    font-size:14px;
+    color:var(--oceano);
+}
+
+tbody tr:last-child td{
+    border-bottom:none;
+}
+
+tbody tr:hover{
+    background:rgba(31,78,84,.03);
+}
+
+.hospede-nome{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-weight:600;
+}
+
+.avatar{
+    width:36px;
+    height:36px;
+    border-radius:50%;
+    background:var(--dourado-claro);
+    color:var(--oceano);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:700;
+    font-size:13px;
+    flex-shrink:0;
+}
+
+.action-btn{
+    border:none;
+    width:34px;
+    height:34px;
+    border-radius:10px;
+    cursor:pointer;
+    margin-right:6px;
+    font-size:15px;
+    transition:.2s;
+}
+
+.action-btn.edit{
+    background:rgba(46,196,182,.14);
+    color:var(--turquesa);
+}
+
+.action-btn.edit:hover{
+    background:var(--turquesa);
+    color:#fff;
+}
+
+.action-btn.delete{
+    background:rgba(224,116,106,.12);
+    color:var(--coral);
+}
+
+.action-btn.delete:hover{
+    background:var(--coral);
+    color:#fff;
+}
+
+.empty-row td{
+    text-align:center;
+    padding:50px 20px;
+    color:var(--oceano-claro);
+    font-size:14px;
+}

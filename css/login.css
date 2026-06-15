@@ -1,0 +1,221 @@
+/* ============================================
+   LOGIN — MARESIA DUNAS RESORT
+   ============================================ */
+
+:root{
+    --areia:        #F6F1E7;
+    --oceano:       #0E2A30;
+    --oceano-med:   #1F4E54;
+    --oceano-claro: #3A6B70;
+    --dourado:      #C9A66B;
+    --dourado-claro:#E3CFA4;
+    --turquesa:     #2EC4B6;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+    background:var(--oceano);
+}
+
+#bg-video{
+    position:fixed;
+    top:0; left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    filter:saturate(1.05) brightness(.85);
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg, rgba(14,42,48,.35) 0%, rgba(14,42,48,.75) 100%);
+}
+
+.login-container{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:420px;
+    max-width:90vw;
+    padding:46px 40px;
+    background:rgba(246,241,231,.08);
+    backdrop-filter:blur(24px);
+    border-radius:26px;
+    border:1px solid rgba(246,241,231,.18);
+    text-align:center;
+    color:var(--areia);
+    box-shadow:0 30px 70px rgba(0,0,0,.35);
+}
+
+.login-container .badge{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:54px;
+    height:54px;
+    border-radius:50%;
+    background:var(--dourado-claro);
+    color:var(--oceano);
+    font-size:24px;
+    margin-bottom:18px;
+}
+
+.login-container h1{
+    font-family:'Fraunces',serif;
+    font-size:30px;
+    font-weight:600;
+    margin-bottom:6px;
+    letter-spacing:-.01em;
+}
+
+.login-container p{
+    margin-bottom:32px;
+    font-size:13px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:var(--dourado-claro);
+}
+
+.input-group{
+    display:flex;
+    align-items:center;
+    background:rgba(246,241,231,.10);
+    border:1px solid rgba(246,241,231,.14);
+    padding:15px 16px;
+    margin:14px 0;
+    border-radius:14px;
+    transition:.2s;
+}
+
+.input-group:focus-within{
+    border-color:var(--dourado);
+    background:rgba(246,241,231,.14);
+}
+
+.input-group i{
+    margin-right:12px;
+    font-size:18px;
+    color:var(--dourado-claro);
+}
+
+.input-group input{
+    width:100%;
+    background:none;
+    border:none;
+    outline:none;
+    color:var(--areia);
+    font-size:15px;
+    font-family:'Inter',sans-serif;
+}
+
+.input-group input::placeholder{
+    color:rgba(246,241,231,.55);
+}
+
+.error-msg{
+    color:#FF9E96;
+    font-size:13px;
+    margin-top:8px;
+    min-height:18px;
+}
+
+/* SELETOR DE PERFIL */
+.role-tabs{
+    display:flex;
+    gap:8px;
+    background:rgba(246,241,231,.08);
+    border:1px solid rgba(246,241,231,.14);
+    border-radius:14px;
+    padding:6px;
+    margin-bottom:26px;
+}
+
+.role-tab{
+    flex:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:11px 10px;
+    border:none;
+    border-radius:10px;
+    background:transparent;
+    color:rgba(246,241,231,.65);
+    font-family:'Inter',sans-serif;
+    font-size:13px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.role-tab i{
+    font-size:16px;
+}
+
+.role-tab:hover{
+    color:var(--areia);
+}
+
+.role-tab.active{
+    background:var(--dourado);
+    color:var(--oceano);
+}
+
+.login-hint{
+    margin-top:18px;
+    font-size:12px;
+    color:rgba(246,241,231,.55);
+    line-height:1.6;
+}
+
+.login-hint strong{
+    color:var(--dourado-claro);
+}
+
+button[type="submit"]{
+    width:100%;
+    padding:16px;
+    margin-top:18px;
+    background:var(--dourado);
+    border:none;
+    border-radius:14px;
+    color:var(--oceano);
+    font-size:15px;
+    font-weight:700;
+    letter-spacing:.5px;
+    cursor:pointer;
+    transition:.25s;
+}
+
+button[type="submit"]:hover{
+    background:var(--dourado-claro);
+    transform:translateY(-2px);
+    box-shadow:0 12px 30px rgba(201,166,107,.35);
+}
+
+.login-footer{
+    margin-top:24px;
+    font-size:12px;
+    color:rgba(246,241,231,.5);
+}
+#toggleSenha{
+    cursor:pointer;
+    margin-left:10px;
+    font-size:18px;
+    color:var(--dourado-claro);
+    transition:.2s;
+}
+
+#toggleSenha:hover{
+    color:var(--areia);
+}
