@@ -6,7 +6,7 @@
 ![NodeJS](https://img.shields.io/badge/node.js-%236DA55F.svg?style=for-the-badge&logo=node.js&logoColor=white)
 ![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
 
-Um sistema web completo para o gerenciamento de hotelaria, focado no controle de reservas de quartos e lançamentos de consumo de frigobar para o fictício *Maresia Dunas Resort*. O projeto engloba desde a validação de acesso com tela de login até operações completas de CRUD.
+Um sistema web completo para o gerenciamento de hotelaria com o nome  fictício *Maresia Dunas Resort*. O projeto engloba desde a validação de acesso com tela de login até operações completas de CRUD.
 
 ---
 
@@ -35,7 +35,7 @@ O projeto foi estruturado dividindo as responsabilidades entre Front-End e Back-
 | :--- | :--- | :--- |
 | **Front-End** | HTML5 / CSS3 / JavaScript | Estruturação, estilização global, animações e manipulação do DOM. |
 | **Back-End** | Node.js / Express | Criação da API REST e gerenciamento das rotas do sistema. |
-| **Banco de Dados** | MySQL | Armazenamento relacional dos dados de usuários, quartos e frigobar. |
+| **Banco de Dados** | MySQL | Armazenamento relacional dos dados de usuários, quartos, hospedes, resevas, financeiro . |
 | **IA** | Assistente de Engenharia | Utilizada como ferramenta de suporte para debugar rotas e otimizar a lógica do CRUD. |
 
 ---
