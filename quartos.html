@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Quartos | Maresia Dunas Resort</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/quartos.css">
+
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+
+</head>
+<body>
+
+<div class="container">
+
+    <aside class="sidebar"></aside>
+
+    <main>
+
+        <header class="topbar">
+            <div>
+                <h1>Gestão de Quartos</h1>
+                <p>Controle dos quartos do resort</p>
+            </div>
+
+            <button id="novoQuarto">
+                <i class="ti ti-plus"></i>
+                Novo Quarto
+            </button>
+        </header>
+
+        <section class="stats">
+            <div class="stat-card">
+                <h2 id="totalQuartos">0</h2>
+                <span>Total de Quartos</span>
+            </div>
+
+            <div class="stat-card">
+                <h2 id="ocupados">0</h2>
+                <span>Ocupados</span>
+            </div>
+
+            <div class="stat-card">
+                <h2 id="disponiveis">0</h2>
+                <span>Disponíveis</span>
+            </div>
+
+            <div class="stat-card">
+                <h2 id="manutencao">0</h2>
+                <span>Manutenção</span>
+            </div>
+
+            <div class="stat-card">
+                <h2 id="capacidadeTotal">0</h2>
+                <span>Capacidade Total (pessoas)</span>
+            </div>
+        </section>
+
+        <div class="quartos-grid" id="quartosGrid"></div>
+
+    </main>
+</div>
+
+<div class="modal" id="modal">
+    <div class="modal-content">
+
+        <h2 id="modalTitulo">Cadastrar Quarto</h2>
+
+        <input type="hidden" id="quartoId">
+
+        <label>Número</label>
+        <input type="text" id="numero" placeholder="Ex: 101">
+
+        <label>Tipo</label>
+        <select id="tipo">
+            <option>Suíte Oceano</option>
+            <option>Suíte Solarium</option>
+            <option>Bangalô Duna</option>
+            <option>Suíte Presidencial</option>
+        </select>
+
+        <label>Status</label>
+        <select id="status">
+            <option>Disponível</option>
+            <option>Ocupado</option>
+            <option>Manutenção</option>
+        </select>
+
+        <label>Capacidade (pessoas)</label>
+        <input type="number" id="capacidade" placeholder="Ex: 2" min="1" max="20">
+
+        <div class="buttons">
+            <button id="salvar">Salvar</button>
+            <button id="fechar">Cancelar</button>
+        </div>
+
+    </div>
+</div>
+
+<script src="js/shell.js"></script>
+<script src="js/quartos.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maresia Dunas Resort</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/login.css">
+
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+
+</head>
+<body>
+
+<video autoplay muted loop id="bg-video">
+    <source src="assets/video/mar.mp4" type="video/mp4">
+</video>
+
+<div class="overlay"></div>
+
+<div class="login-container">
+
+    <div class="badge">
+        <i class="ti ti-anchor"></i>
+    </div>
+ <h1>Maresia Dunas Resort</h1>
+    <p>Bem - Vindo ao Sistema!</p>
+    <div class="role-tabs">
+        <button type="button" class="role-tab active" data-role="recepcao">
+            <i class="ti ti-headset"></i>
+            Recepção
+        </button>
+        <button type="button" class="role-tab" data-role="admin">
+            <i class="ti ti-shield-star"></i>
+            Administrador
+        </button>
+    </div>
+
+    <form id="loginForm">
+
+        <input type="hidden" id="perfil" value="recepcao">
+
+        <div class="input-group">
+            <i class="ti ti-mail"></i>
+            <input
+            type="email"
+            id="email"
+            placeholder="Email"
+            required>
+        </div>
+
+        <div class="input-group">
+            <i class="ti ti-lock"></i>
+            <input
+            type="password"
+            id="senha"
+            placeholder="Senha"
+            required>
+
+    <i class="ti ti-eye" id="toggleSenha"></i>
+        </div>
+
+        <p class="error-msg" id="erroLogin"></p>
+
+        <button type="submit">
+            Entrar
+        </button>
+
+    </form>
+
+    <p class="login-hint" id="loginHint"></p>
+
+    <p class="login-footer">© 2026 Maresia Dunas Resort</p>
+
+</div>
+
+<script src="js/login.js"></script>
+
+</body>
+</html>
