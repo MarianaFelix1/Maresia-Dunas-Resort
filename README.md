@@ -16,19 +16,23 @@ Cadastro de hóspedes
 Edição de informações
 Exclusão de registros
 Pesquisa de hóspedes
+
 🛏️ Gestão de Quartos
 Cadastro de quartos
 Controle de disponibilidade
 Status de ocupação
 Categorias de hospedagem
+
 📅 Gestão de Reservas
 Check-in e Check-out
 Controle de hospedagens
 Histórico de reservas
+
 💰 Financeiro
 Receita total
 Controle de pagamentos
 Indicadores financeiros
+
 🔐 Controle de Acesso
 Login Administrador
 Login Recepcionista
